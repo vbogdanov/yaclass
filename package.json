@@ -1,0 +1,17 @@
+{
+  "name": "yaclass",
+  "version": "0.0.0",
+  "description": "Yet Another Class library for JavaScript/Node",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine-node tests/"
+  },
+  "repository": "",
+  "keywords": [
+    "class",
+    "constructor",
+    "type"
+  ],
+  "author": "Valeri Bogdanov",
+  "license": "BSD"
+}
