@@ -6,6 +6,16 @@
   "scripts": {
     "test": "jasmine-node tests/"
   },
+  "dependencies":{
+    "requirejs":"latest",
+    "amdefine":"latest",
+    "constraints":"0.0.4",
+    "node-uuid":"latest"
+  },
+  "devDependencies": {
+    "jasmine-node": "latest",
+    "jshint": "latest",
+  },
   "repository": "",
   "keywords": [
     "class",
