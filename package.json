@@ -6,15 +6,15 @@
   "scripts": {
     "test": "jasmine-node tests/"
   },
-  "dependencies":{
-    "requirejs":"latest",
-    "amdefine":"latest",
+  "dependencies": {
+    "requirejs":"2.1.8",
+    "amdefine": "0.0.5",
     "constraints":"0.0.4",
-    "node-uuid":"latest"
+    "node-uuid":  "1.4.0"
   },
   "devDependencies": {
     "jasmine-node": "latest",
-    "jshint": "latest",
+    "jshint":       "latest"
   },
   "repository": "",
   "keywords": [
