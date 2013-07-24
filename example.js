@@ -1,6 +1,3 @@
-/* global Person: false */
-/* global PersonUtil: false */
-/* global PupilUtil: false */
 /* *global Person: false */
 
 'use strict';
@@ -33,14 +30,26 @@ var Pupil = yaclass({
   }
 });
 
-/*
-function (types, returnType, argumentTypes, unsafeFn) {
-  return function (%{ARGS}) {
-    typecheck.args(....)
-    var result = unsafeFn(%{ARGS})
-    typecheck.assert(returnType, result);
-  };
+
+//used:
+var PersonUtil = {
+  myfunction: function () {
+    this.go();
+  }
+};
+
+var PupilUtil = {
+  doPupil: function () {
+    this.myfunction();
+    this.getCources();
+  }
+};
+
+function Person() {
+  this.name = 'Ivan';
+  this.age = '22';
 }
 
-
-*/
+Person.prototype.test = function () {
+  //do something
+};
