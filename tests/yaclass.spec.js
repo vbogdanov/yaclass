@@ -19,6 +19,7 @@ describe('yaclass', function () {
   describe('#defclass', function () {
     it('defines a class with methods passed in the object returned from \'public\'', function () {
       var Greeter = yaclass.defclass({
+        name: 'Greeter',
         public: function (pass) {
           return {
             hello: function () {
@@ -28,8 +29,8 @@ describe('yaclass', function () {
         }
       });
 
-      var obj = Greeter.create();
-
+      var obj = new Greeter();
+      console.log(obj);
       expect(obj.hello()).toBe('success');
 
     });

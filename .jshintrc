@@ -7,7 +7,7 @@
 	"globalstrict":true,
 	"maxparams":3,
 	"maxdepth":2,
-	"maxstatements":8,
+	"maxstatements":15,
 	"eqeqeq": true,
 	"globals": {
 		"require": false,
