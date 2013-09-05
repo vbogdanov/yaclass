@@ -6,16 +6,10 @@
 /* jshint maxstatements: 30 */
 'use strict';
 
-var createYaclass = require('../index');
+var yaclass = require('../lib/yaclass');
 
 describe('yaclass', function () {
   
-  var yaclass;
-  
-  beforeEach(function () {
-    yaclass = createYaclass();
-  });
-
   describe('#defclass', function () {
     it('defines a class with methods passed in the object returned from \'public\'', function () {
       var Greeter = yaclass.defclass({
@@ -30,7 +24,6 @@ describe('yaclass', function () {
       });
 
       var obj = new Greeter();
-      console.log(obj);
       expect(obj.hello()).toBe('success');
     });
 
@@ -168,6 +161,7 @@ describe('yaclass', function () {
       var str = 'Hello, Ivan with fn:[123456], your mark is 6';
       expect(student.congrat(6)).toBe(str);
     });
+    
   });
 
   describe('#defn', function () {
