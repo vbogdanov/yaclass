@@ -109,4 +109,35 @@ describe('yaclass-performance', function () {
     console.log('VectorPriv\t', executionTime(function ()     { return VectorPriv.create(   {x:3, y: 2, z: -1}); }, 1000000));
   });
 
+  it('performance with real class', function () {
+    var VectorProto = require('./Vector-proto');
+    var VectorPriv = require('./Vector-priv');
+    var VectorYaclass = require('./Vector-yaclass');
+
+    console.log('VectorYaclass\t', executionTime(function ()  { 
+      var v = VectorYaclass.create({x:3, y: 2, z: -1});
+      v.revert();
+      v.multiply(5);
+      v.abs();
+      v.length();
+      v.unitVector();
+    }, 100000));
+    console.log('\nVectorProto\t', executionTime(function ()  {
+      var v = VectorProto.create(  {x:3, y: 2, z: -1}); 
+      v.revert();
+      v.multiply(5);
+      v.abs();
+      v.length();
+      v.unitVector();
+    }, 100000));
+    console.log('VectorPriv\t', executionTime(function ()     {
+      var v = VectorPriv.create(   {x:3, y: 2, z: -1}); 
+      v.revert();
+      v.multiply(5);
+      v.abs();
+      v.length();
+      v.unitVector();
+    }, 100000));
+  });
+
 });

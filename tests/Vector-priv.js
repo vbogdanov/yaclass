@@ -5,47 +5,47 @@ var Dimensions = require("./Dimensions");
 
 
 function Vector(fn/*(value, enum)*/) {
-  return Dimensions.reduce(this, fn);
+  Dimensions.reduce(this, fn);
   var vector = this;
 
   vector.add = function(anotherVector) {
     var that = this;
-    return buildNewVector(function (value, key) {
+    return new Vector(function (value, key) {
       value[key] = that[key] + anotherVector[key];
     });
   }
   
   vector.substract = function (anotherVector) {
     var that = this;
-    return buildNewVector(function (value, key) {
+    return new Vector(function (value, key) {
       value[key] = that[key] - anotherVector[key];
     });
   }
   
   vector.revert = function () {
     var that = this;
-    return buildNewVector(function (value, key) {
+    return new Vector(function (value, key) {
       value[key] = - that[key];
     });
   }
   
   vector.multiply = function (scalar) {
     var that = this;
-    return buildNewVector(function (value, key) {
+    return new Vector(function (value, key) {
       value[key] = scalar * that[key];
     });
   }
   
   vector.abs = function () {
     var that = this;
-    return buildNewVector(function (value, key) {
+    return new Vector(function (value, key) {
       value[key] = Math.abs(that[key]);
     });
   }
   
   vector.revertDim = function (dimension) {
     var that = this;
-    return buildNewVector(function (value, key) {
+    return new Vector(function (value, key) {
       value[key] = (key === dimension) ? -that[key]: that[key];
     });
   }
